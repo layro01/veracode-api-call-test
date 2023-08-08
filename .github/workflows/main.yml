@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Veracode API call step
         id: self
-        uses: layro01/veracode-api-call@v0.1
+        uses: layro01/veracode-api-call@main
         with:
           endpoint-url: 'api/authn/v2/users/self'
       - name: Get the response
