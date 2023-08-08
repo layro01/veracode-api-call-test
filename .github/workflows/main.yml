@@ -10,5 +10,8 @@ jobs:
         uses: layro01/veracode-api-call@main
         with:
           endpoint-url: 'api/authn/v2/users/self'
+        env:
+          VERACODE_API_KEY_ID: ${{ secrets.VERACODE_API_KEY_ID }}
+          VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY_SECRET }}
       - name: Get the response
         run: echo "The response was ${{ steps.self.outputs.response }}"
