@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  test_veracode_api_call_job:
+    runs-on: ubuntu-latest
+    name: A job to test the Veracode API Call custom GitHub action
+    steps:
+      - name: Veracode API call step
+        id: self
+        uses: layro01/veracode-api-call@v0.1
+        with:
+          endpoint-url: 'api/authn/v2/users/self'
+      - name: Get the response
+        run: echo "The response was ${{ steps.self.outputs.response }}"
